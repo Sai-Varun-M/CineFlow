@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>CineFlow</h2>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="nav-item active" data-tab="foryou">
+                    <i class="ph ph-magic-wand"></i> For You
+                </a>
+                <a href="#" class="nav-item" data-tab="trending">
+                    <i class="ph ph-trend-up"></i> Trending
+                </a>
+                <a href="#" class="nav-item" data-tab="movies">
+                    <i class="ph ph-film-strip"></i> Movies
+                </a>
+                <a href="#" class="nav-item" data-tab="webseries">
+                    <i class="ph ph-television"></i> Webseries
+                </a>
+                <div class="nav-divider"></div>
+                <a href="#" class="nav-item" data-tab="watchlist">
+                    <i class="ph ph-bookmark-simple"></i> Watchlist
+                </a>
+                <a href="#" class="nav-item" data-tab="favourites">
+                    <i class="ph ph-heart"></i> Favourites
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="search-bar" id="search-container">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="Search movies, series...">
+                    <div class="search-dropdown hidden" id="search-dropdown"></div>
+                </div>
+                <div class="user-actions">
+                    <i class="ph ph-user"></i>
+                    
+                    <div class="notification-icon" id="notification-btn">
+                        <i class="ph ph-bell"></i>
+                        <span class="badge" id="notif-badge">3</span>
+                        <!-- Dropdown -->
+                        <div class="dropdown-menu hidden" id="notification-dropdown">
+                            <div class="dropdown-header">Notifications</div>
+                            <div class="dropdown-item">
+                                <div class="notif-dot"></div>
+                                <p>Your Taste Test is ready to take!</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <div class="notif-dot"></div>
+                                <p><strong>Dune: Part Two</strong> is trending now.</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <div class="notif-dot"></div>
+                                <p>New features: Watchlist & Favourites added.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body" id="main-view">
+                <!-- Rendered by JS Router -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Taste Test Modal -->
+    <div id="test-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn"><i class="ph ph-x"></i></button>
+            
+            <div id="quiz-container">
+                <!-- Question Screen -->
+                <div id="question-screen" class="screen active">
+                    <h2 id="question-text">Loading...</h2>
+                    <div id="options-container" class="options-container">
+                        <!-- Options injected here -->
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Processing Screen -->
+                <div id="processing-screen" class="screen hidden">
+                    <div class="spinner"></div>
+                    <h2>Analyzing your vibe...</h2>
+                    <p>Finding the perfect matches.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
